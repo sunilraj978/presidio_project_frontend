@@ -23,7 +23,7 @@ function MyProfile() {
         SetID(id);
       console.log("Fetch all sellers in home page func called");
       console.log(id);
-      const response = await fetch(`http://localhost:5000/fetchProfileMyproperty/${id}`, {
+      const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchProfileMyproperty/${id}`, {
         method: 'GET',
         headers: {
           "Content-Type": "application/json"
@@ -44,7 +44,7 @@ function MyProfile() {
       const deletePost = async(id)=>{
 
         console.log(id);
-        const response = await fetch(`http://localhost:5000/deletepost/${id}`, {
+        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/deletepost/${id}`, {
             method: 'POST',
             headers: {
               "Content-Type": "application/json"
