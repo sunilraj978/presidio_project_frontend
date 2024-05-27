@@ -15,7 +15,7 @@ function Home() {
 
     async function fetchAllData() {
         console.log("Fetch all sellers in home page func called");
-        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchData`, {
+        const response = await fetch(`https://rental-home-6lrh.onrender.com/fetchData`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json"
@@ -41,7 +41,7 @@ function Home() {
         if(searchtext===""){
             fetchAllData();
         }
-        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchfilter`, {
+        const response = await fetch(`https://rental-home-6lrh.onrender.com/fetchfilter`, {
             method: 'POST',
             headers: {
             "Content-Type": "application/json"
@@ -79,19 +79,6 @@ function Home() {
         
         <div className='seller-cards'>
           {sellers.map((seller) => (
-
-                    // <div className='card'>
-                    // {seller.imageUrl && <img src={seller.imageUrl} alt={`${seller.firstName} ${seller.lastName}`} />}
-                    // <h2>{seller.firstName} {seller.lastName}</h2>
-
-                    // <p><strong>Price:</strong> ${seller.price}</p>
-                    // <p><strong>Area:</strong> {seller.area}</p>
-                    // <p><strong>Place:</strong> {seller.place}</p>
-                    // <p><strong>Bedrooms:</strong> {seller.bedrooms}</p>
-                    // <p><strong>Bathrooms:</strong> {seller.bathrooms}</p>
-                    // <p><strong>Near By College / Hospital:</strong> {seller.nearBy}</p>
-                    // <button className='btn-fil' onClick={()=>{handleinterest(seller.userId)}}>Interested</button>
-                    // </div>
                     <Card image={seller.imageUrl} firstName={seller.firstName} lastName={seller.lastName} price={seller.price} Bedrooms={seller.bedrooms} Bathrooms={seller.bathrooms} Area={seller.area} Place={seller.place} Nearby={seller.nearBy} id={seller._id} />
 
           ))}
