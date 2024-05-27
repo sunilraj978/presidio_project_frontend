@@ -1,6 +1,5 @@
 import React , { Component } from 'react'
 import Slider from "react-slick";
-import HorizontalScroll from 'react-scroll-horizontal';
 import { Link , useNavigate , useParams} from 'react-router-dom';
 import { createContext, useContext, useState , useEffect } from 'react';
 import "slick-carousel/slick/slick.css";
