@@ -1,0 +1,257 @@
+body {
+    background-image: url("https://res.cloudinary.com/dn0o9nr16/image/upload/v1716702642/tierra-mallorca-rgJ1J8SDEAY-unsplash_cye8vb.jpg");
+    overflow-y: scroll;
+  }
+  
+  .navbar {
+    position: absolute;
+    top: -1px;
+    left: -3px;
+    height: 5em;
+    width: 100%;
+    background-color: #252b2b;
+    color: white;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .nav-link {
+    width: 5em;
+    height: 2em;
+    margin: 1em;
+    color: white;
+    position: relative;
+    top: -10px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+    border-radius: 10px;
+  }
+  
+  .logo {
+    width: 7em;
+    height: 7em;
+    margin: 5px;
+    cursor: pointer;
+    border: 0px;
+    position: absolute;
+    top: -15px;
+  }
+  
+  /*-------------------------------- SEARCH --------------------------------*/
+  
+  .filter-dd {
+    width: 10%;
+    margin: 0px 10px 8px 0px;
+    border-radius: 8px;
+  }
+  
+  .search-div {
+    position: relative;
+    top: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 5.2em;
+    position: fixed;
+    background-color: #b9d7d9;
+  }
+  
+  .inp-search {
+    padding: 8px;
+    width: 40%;
+    height: 3em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    width: 5%;
+    height: 2em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .container {
+    position: fixed;
+    z-index: 2;
+    background-color: #b9d7d9;
+  }
+  
+  /*---------------------------------------------Product cards------------------------------------------*/
+  
+  .product-container-div {
+    background-color: #b9d7d9;
+    position: relative;
+    top: 9.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+  }
+  
+  .products {
+    margin: 5px 5px 50px 5px;
+    width: 75em;
+    height: 13.1em;
+    position: relative;
+    left: 10px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .p-cards {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 1em;
+    width: 10px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #cee3e4;
+    border: 0px solid black;
+  }
+  
+  .p-name {
+    font-size: large;
+    margin: 0px;
+  }
+  
+  .p-price {
+    margin: 0px;
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  .p-img {
+    width: 200px;
+    height: 150px;
+    border-radius: 6px 6px 0px 0px;
+    border: 2px solid black;
+    border-bottom: 0px;
+    cursor: pointer;
+  }
+  
+  .btn-div-p {
+    background-color: #e2e6cc;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 12.5em;
+    height: 75px;
+    border: 2px solid black;
+    border-radius: 0px 0px 6px 6px;
+    border-top: 0px;
+  }
+  
+  /*--------------------------------------- Seller profile on product cards ------------------------------------------------------------------*/
+  
+  .seller-username-div {
+    width: 100%;
+  }
+  
+  .seller-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .sel-profile-contents-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    left: 87px;
+  }
+  
+  /*--------------------------------------- Seller profile cards ------------------------------------------------------------------*/
+  
+  .home {
+    padding: 20px;
+  }
+  
+  .seller-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    top: 5em;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    margin: 5px 0;
+  }
+  
+  .card strong {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .filterrr{
+    position: relative;
+    top: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn-fil{
+    width: 8em;
+    height: 3em;
+  }
+  .inputfilter{
+    width: 50%;
+  }
