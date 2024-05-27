@@ -4,6 +4,7 @@ import {Link , useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BuyerIdContext } from '../App'
+import Spinner from '../components/Spinner';
 //----------------------------------------------------------> Buyer
 
 
@@ -14,7 +15,7 @@ function Signin() {
     const [password, setPassword] = useState('');
     const [token,setToken] = useState('');
     const { buyerId , setBuyerId } = useContext(BuyerIdContext);
-    
+    const [loading, setLoading] = useState(false);
     
 
     const handleEmailChange = (event) => {
@@ -27,6 +28,7 @@ function Signin() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+         setLoading(true);
         if(email==='' || password==='')
         {
             toast("Enter all fields");
@@ -47,7 +49,7 @@ function Signin() {
         const data = await res.json();
          if(res.ok)
          {
-            // setBuyerId(data);
+            setLoading(false)
             toast("Login success !!");
                 setTimeout(() => {
                     setBuyerId(data[0]);
@@ -59,6 +61,7 @@ function Signin() {
          }
          else
          {
+             setLoading(false)
             toast("Invalid username or password!");
                     navigate('/signinbuyer');
                     return;
@@ -96,6 +99,11 @@ function Signin() {
                 
                 <h4><Link to="/register">Doesn't have account?</Link></h4>
             </form>
+
+             <div>
+            {loading? <Spinner/>:(<></>)}
+            </div>
+                        
         </div>
     );
 }
