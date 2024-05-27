@@ -96,17 +96,20 @@ function SellerPage() {
             })
          })
         
-        const data = await res.json();
-    
-        navigate(`/home/${BUYERID}`)
+        if(res.ok){
+            
+                toast("Mail sent successfully!!")
+           
+        }
+        else{
+            toast("Check your connectivity! try again")
+        }
     
 
       }
 
 
-    //   useEffect(()=>{
-    //     fetchUserData();
-    //   }, [property])
+
      
 
 
@@ -147,7 +150,11 @@ function SellerPage() {
                                          <p> <b>Nearby college/hospital : </b>{item.nearBy}</p>
                                     </li>
                                     
+                                    <div>
+                                    <ToastContainer/>
                                     <Button variant="primary" className='intBtn' onClick={(e)=>notifyMail(e)}>Notify Seller</Button>
+                                    <Button variant="primary" className='intBtn' onClick={(e)=>navigate(`/home/${BUYERID}`)}>Go Home</Button>                                    
+                                    </div>
                                    
                                 </ul>
                                 
