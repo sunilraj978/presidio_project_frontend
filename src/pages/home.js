@@ -15,7 +15,7 @@ function Home() {
 
     async function fetchAllData() {
         console.log("Fetch all sellers in home page func called");
-        const response = await fetch(`http://localhost:5000/fetchData`, {
+        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchData`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json"
@@ -41,7 +41,7 @@ function Home() {
         if(searchtext===""){
             fetchAllData();
         }
-        const response = await fetch(`http://localhost:5000/fetchfilter`, {
+        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchfilter`, {
             method: 'POST',
             headers: {
             "Content-Type": "application/json"
