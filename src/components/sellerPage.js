@@ -25,7 +25,7 @@ function SellerPage() {
     const fetchUserData= async(userData)=>{
   console.log("user data ")
   console.log(userData[0]?.userId)
-        const response = await fetch(`http://localhost:5000/fetchUserDetails/${userData[0]?.userId}`, {
+        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchUserDetails/${userData[0]?.userId}`, {
         method: 'GET',
         headers: {
           "Content-Type": "application/json"
@@ -42,7 +42,7 @@ function SellerPage() {
         SetID(id);
       console.log("Fetch all sellers in home page func called");
       //console.log(id);
-      const response = await fetch(`http://localhost:5000/fetchMyproperty/${id}`, {
+      const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchMyproperty/${id}`, {
         method: 'GET',
         headers: {
           "Content-Type": "application/json"
@@ -68,7 +68,7 @@ function SellerPage() {
         e.preventDefault();
         console.log("notify mail called")
         console.log(BUYERID)
-        const response = await fetch(`http://localhost:5000/fetchUserDetails/${BUYERID}`, {
+        const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/fetchUserDetails/${BUYERID}`, {
             method: 'GET',
             headers: {
               "Content-Type": "application/json"
@@ -84,7 +84,7 @@ function SellerPage() {
 
       const sendMail = async(buyerData) =>{
         console.log("send mail called")
-        const res = await fetch("http://localhost:5000/confirmorder" , {
+        const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/confirmorder" , {
             method:"post",
             headers:{
                 "Content-Type":"application/json"
