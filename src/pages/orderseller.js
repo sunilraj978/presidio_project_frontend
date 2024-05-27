@@ -31,7 +31,7 @@ function Orderseller() {
   useEffect(() => {
     async function fetchBill() {
         try {
-            const res = await fetch(`http://localhost:5000/getbillforseller/${id}`);
+            const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getbillforseller/${id}`);
             if (res.ok) {
                 const data = await res.json();
                // Handle the data received from the server
