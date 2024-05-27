@@ -31,7 +31,7 @@ useEffect(()=>{
         setBid(BUYERID);
         
         const token = localStorage.getItem("buyer_TOKEN");
-        const res = await fetch(`http://localhost:5000/getmycart/${BUYERID}` , {
+        const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getmycart/${BUYERID}` , {
             method:'GET',
             headers:{
                 "authorization" : `Bearer ${token}`,
@@ -57,7 +57,7 @@ const deleteProduct=async(e , product)=>{
    console.log(product);
    const BUYERiD = localStorage.getItem("buyerId");
    console.log(BUYERiD);
-   const res = await fetch(`http://localhost:5000/removefromcart/${BUYERiD}`, {
+   const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/removefromcart/${BUYERiD}`, {
     method: "PUT",
     headers: {
         "Content-Type": "application/json"
@@ -69,7 +69,7 @@ console.log(data);
 if (res.ok) {
     toast("Item removed")
     const fetchCart = async()=>{
-        const res = await fetch(`http://localhost:5000/getmycart/${BUYERiD}` , {
+        const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getmycart/${BUYERiD}` , {
             method:'GET'
         })
         const data = await res.json();
@@ -93,13 +93,13 @@ const handleBuy = async (index)=>{
             const cartObject = buyercart[index];
             const sellerobj = buyercart[index].sellerId;
             const buyerid = localStorage.getItem("buyerId");
-            const res = await fetch(`http://localhost:5000/getbuyer/${buyerid}` , {
+            const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getbuyer/${buyerid}` , {
                 method:"GET"
                 }) 
             const buyerobj = await res.json();
             // console.log(buyerobj);
 
-            const response = await fetch(`http://localhost:5000/billcreation`,{
+            const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/billcreation`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -173,7 +173,7 @@ const [imageUrl, setImageUrl] = useState(null);
 
   const storeDB = async()=>{
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:5000/createproduct",{
+    const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/createproduct",{
             method:"post",
             headers:{
                 "authorization" : `Bearer ${token}`,
