@@ -14,7 +14,7 @@ function UpdateProduct() {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/${id}`,{
+    const res = await fetch(`https://rental-home-6lrh.onrender.com/update/${id}`,{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
