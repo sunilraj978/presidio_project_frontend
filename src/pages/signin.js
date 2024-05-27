@@ -33,7 +33,7 @@ function Signin() {
             navigate('/signin');
             return;
         }
-         const res = await fetch("http://localhost:5000/loginbuyer" , {
+         const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/loginbuyer" , {
             method:"post",
             headers:{
                 "Content-Type":"application/json"
