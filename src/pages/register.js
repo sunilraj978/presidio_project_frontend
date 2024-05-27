@@ -39,7 +39,7 @@ function Register() {
     async function handleSubmit(e){
 
         e.preventDefault()
-        const res = await fetch("http://localhost:5000/register",{
+        const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/register",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
