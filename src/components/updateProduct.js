@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import { useParams , useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 
 function UpdateProduct() {
   const [price, setPrice] = useState('');
@@ -10,6 +12,29 @@ function UpdateProduct() {
 
   const {id} = useParams();
   const navigate = useNavigate();
+
+   useEffect(()=>{
+        async function fetchAllData() {
+       
+          const response = await fetch(`https://rental-home-6lrh.onrender.com/fetchMyproperty/${id}`, {
+            method: 'GET',
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+          const data = await response.json();
+        
+            setPrice(data[0]?.price);
+            setArea(data[0]?.area);
+            setPlace(data[0]?.place);
+            setBathrooms(data[0]?.bathrooms);
+            setBedrooms(data[0]?.bedrooms);
+          
+           
+        }
+
+        fetchAllData();
+    },[])
 
 
   const handleSubmit = async(event) => {
@@ -89,7 +114,8 @@ function UpdateProduct() {
           onChange={(event) => setBedrooms(event.target.value)} 
         /><br />
 
-        <button type="submit">Submit</button>
+        <Button variant="success" className='intBtn'>UPDATE</Button>                                    
+            
       </form>
     </div>
   );
