@@ -35,6 +35,7 @@ function Signin() {
         }
          const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/loginbuyer" , {
             method:"post",
+            credentials: "include" ,
             headers:{
                 "Content-Type":"application/json"
             },
