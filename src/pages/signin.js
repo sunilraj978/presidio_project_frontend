@@ -33,7 +33,7 @@ function Signin() {
             navigate('/signin');
             return;
         }
-         const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/loginbuyer" , {
+         const res = await fetch("https://rental-home-6lrh.onrender.com/loginbuyer" , {
             method:"post",
             credentials: "include" ,
             headers:{
