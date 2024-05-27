@@ -14,7 +14,7 @@ function SellerCard({ image, firstName, lastName, price , Bedrooms , Bathrooms ,
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={image} alt={`${firstName} ${lastName}`} />
             <Card.Body>
-                <Card.Title><b>Price: ${price}</b>               
+                <Card.Title><b>Price: ₹{price}</b>               
                  </Card.Title>
                 <Card.Text>
                 Place and Area : {Place} , {Area}
