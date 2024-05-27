@@ -14,7 +14,7 @@ function UpdateProduct() {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    const res = await fetch(`http://localhost:5000/update/${id}`,{
+    const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/${id}`,{
             method:"put",
             headers:{
                 "Content-Type":"application/json",
