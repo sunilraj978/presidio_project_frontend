@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BuyerIdContext } from '../App'
-
+import Spinner from '../components/Spinner';
 
 
 function Register() {
@@ -15,6 +15,7 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleFirstName = (event) => {
         setFirstName(event.target.value);
@@ -39,6 +40,7 @@ function Register() {
     async function handleSubmit(e){
 
         e.preventDefault()
+         setLoading(true);
         const res = await fetch("https://rental-home-6lrh.onrender.com/register",{
             method:"post",
             headers:{
@@ -61,7 +63,7 @@ function Register() {
         //console.log(data);
         if(res.ok)
         {
-           // setBuyerId(data);
+           setLoading(false)
            toast("Signup success !!");
                setTimeout(() => {
                    setBuyerId(data);
@@ -69,6 +71,7 @@ function Register() {
         }
         else
         {
+            setLoading(false)
            toast("Username not available!");
                    navigate('/register');
                    return;
@@ -117,6 +120,11 @@ function Register() {
                 </div>
                 
             </form>
+
+            <div>
+            {loading? <Spinner/>:(<></>)}
+            </div>
+                        
         </div>
     );
 }
