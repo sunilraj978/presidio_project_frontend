@@ -31,7 +31,7 @@ useEffect(()=>{
         setBid(BUYERID);
         
         const token = localStorage.getItem("buyer_TOKEN");
-        const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getmycart/${BUYERID}` , {
+        const res = await fetch(`https://rental-home-6lrh.onrender.com/getmycart/${BUYERID}` , {
             method:'GET',
             headers:{
                 "authorization" : `Bearer ${token}`,
@@ -93,13 +93,13 @@ const handleBuy = async (index)=>{
             const cartObject = buyercart[index];
             const sellerobj = buyercart[index].sellerId;
             const buyerid = localStorage.getItem("buyerId");
-            const res = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/getbuyer/${buyerid}` , {
+            const res = await fetch(`https://rental-home-6lrh.onrender.com/getbuyer/${buyerid}` , {
                 method:"GET"
                 }) 
             const buyerobj = await res.json();
             // console.log(buyerobj);
 
-            const response = await fetch(`https://presidio-project-backend-ri26-6umuscmam.vercel.app/billcreation`,{
+            const response = await fetch(`https://rental-home-6lrh.onrender.com/billcreation`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -173,7 +173,7 @@ const [imageUrl, setImageUrl] = useState(null);
 
   const storeDB = async()=>{
     const token = localStorage.getItem("token");
-    const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/createproduct",{
+    const res = await fetch("https://rental-home-6lrh.onrender.com/createproduct",{
             method:"post",
             headers:{
                 "authorization" : `Bearer ${token}`,
