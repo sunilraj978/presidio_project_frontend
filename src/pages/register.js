@@ -39,7 +39,7 @@ function Register() {
     async function handleSubmit(e){
 
         e.preventDefault()
-        const res = await fetch("https://presidio-project-backend-ri26-6umuscmam.vercel.app/register",{
+        const res = await fetch("https://rental-home-6lrh.onrender.com/register",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
